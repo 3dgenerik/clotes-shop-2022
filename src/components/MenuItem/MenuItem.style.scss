@@ -1,0 +1,77 @@
+@mixin menu {
+    border: 0px solid black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all ease-in-out .8s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+@mixin centerInfo($borderWidth, $borderColor){
+    border:$borderWidth solid $borderColor;
+}
+
+.item{
+    @include menu;
+    .center-text{
+        position: absolute;
+        color:black;
+        @include centerInfo(1px, rgba(0,0,0,.4));
+        background:rgba(255,255,255, .7);
+        padding: 20px;
+        transition: all ease-in-out .2s;
+        box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+    
+        :first-child{
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+    .imgWrapper{
+        width:100%;
+        height:100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+        transform: scale(1);
+        transition: all ease-in-out .5s;
+    }
+    &:hover .center-text {
+        transform: scale(1.6);
+    }
+    &:hover .imgWrapper{
+        transform: scale(2) rotate(25deg);
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+    }
+    
+}
+
+.zone0{
+    grid-area: hat;
+}
+
+.zone1{
+    grid-area: jacket;
+}
+
+.zone2{
+    grid-area: sneakers;
+}
+
+.zone3{
+    grid-area: womens;
+}
+
+.zone4{
+    grid-area: mens;
+}
+
+
+
+
+
+
