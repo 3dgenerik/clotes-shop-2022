@@ -1,0 +1,59 @@
+@mixin icon{
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+    cursor: pointer;
+}
+
+.header-wrapper{
+    display:flex;
+    justify-content: space-between;
+    padding:10px;
+    align-items: center;
+    text-transform: uppercase;
+
+    .crown-logo{
+        width: 40px;
+        height: 40px;
+        background-image: url('../../../public/images/media/crown.svg');
+        
+        @include icon;
+    }
+
+    .menu{
+        display:flex;
+        gap:40px;
+
+        .navi{
+            padding-top: 5px;
+            cursor: pointer;
+        }
+
+        .cart{
+            width: 39px;
+            height: 30px;
+            background-image: url('../../../public/images/media/cart_02.png');
+            @include icon;
+            padding-left:20px;
+            
+
+            .sum{
+                width:20px;
+                height:20px;
+                background-color: rgb(0, 139, 219);
+                font-size:8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+                border: 1px solid rgb(0, 78, 202);
+                
+                div{
+                    font-weight: 900;
+                    color: white;
+                }
+            }
+        }
+    }
+}
