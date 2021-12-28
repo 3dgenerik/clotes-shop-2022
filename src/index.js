@@ -10,11 +10,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { setMenuItems } from './containers/redux/GetMenuItems/GetMenuItems.reducer';
 import { setCollection } from './containers/redux/preview-shop/preview-shop.reducer';
 import { setChart } from './containers/redux/Chart/Chart.reducer';
+import { setItemDetails } from './containers/redux/ShopItem/ShopItem.Redux';
 
 const combinedReducers = combineReducers({
   setMenuItems: setMenuItems,
   setCollection: setCollection,
-  setChart: setChart
+  setChart: setChart,
+  setItemDetails: setItemDetails
 });
 
 const store = createStore(combinedReducers, applyMiddleware(thunkMiddleware))

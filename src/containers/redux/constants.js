@@ -3,3 +3,5 @@ export const GET_COLLECTION = 'GET_COLLECTION';
 
 export const SET_CHART_VALUE = 'GET_CHART_VALUE';
 export const RESET_CHART = 'RESET_CHART';
+
+export const GET_ITEM_DETAILS = 'GET_ITEM_DETAILS';

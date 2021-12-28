@@ -1,0 +1,36 @@
+.all-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .detail-wrapper{
+        border: 1px solid rgba(0,0,0,.2);
+        box-shadow: 5px 5px 20px 0px rgba(0,0,0,.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        gap:10px;
+
+        .detail-info{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            // align-items: center;
+        }
+
+        .detail-cart{
+            background:rgb(0, 0, 0);
+            padding: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            color:white;
+            font-weight: 600;
+            cursor: pointer;
+            // box-shadow: inset 0.1em 0.1em 0.1em 0 rgba(255,255,255,0.2), inset -0.1em -0.1em 0.1em 0 rgba(0,0,0,0.3);
+
+        }
+
+    }
+}

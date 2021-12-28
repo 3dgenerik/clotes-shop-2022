@@ -24,9 +24,15 @@ const Header = (props) => {
                 <div className = 'navi contact'>contact</div>
                 <div className = 'navi signin' onClick = {() => navigate('/signin')}>sign in</div>
                 <div className = 'cart'>
-                    <div className = 'sum'>
-                        <div>{items}</div>
-                    </div>
+                    {
+                        items !== 0
+                        ? 
+                        <div className = 'sum'>
+                            <div>{items}</div>
+                        </div>
+                        :
+                        null
+                    }
                 </div>
             </div>
 
