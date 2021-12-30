@@ -21,12 +21,24 @@ $pa:10px;
             border:none;
             border-bottom: 1px solid rgba(0,0,0,.3);
         }
+        [type =  'password']{
+            letter-spacing: .3em;
+        }
+
         label{
             color:rgb(100,100,100);
             font-size: 1rem;
+        }
 
+        .form-input{
+            color:rgba(0, 0, 0,.5);
+            &:focus{
+                color:rgb(0, 0, 0);
+            }
         }
     }
+
+
 
     .btn-wrapper{
         display: flex;
@@ -60,3 +72,5 @@ $pa:10px;
         }
     }
 }
+
+

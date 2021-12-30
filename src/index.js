@@ -11,12 +11,16 @@ import { setMenuItems } from './containers/redux/GetMenuItems/GetMenuItems.reduc
 import { setCollection } from './containers/redux/preview-shop/preview-shop.reducer';
 import { setChart } from './containers/redux/Chart/Chart.reducer';
 import { setItemDetails } from './containers/redux/ShopItem/ShopItem.Redux';
+import { setSigninEmailPassword } from './containers/redux/Signin/Signin.reducer';
+import { setAuthUser } from './containers/redux/Auth/Auth.reducer';
 
 const combinedReducers = combineReducers({
   setMenuItems: setMenuItems,
   setCollection: setCollection,
   setChart: setChart,
-  setItemDetails: setItemDetails
+  setItemDetails: setItemDetails,
+  setSigninEmailPassword: setSigninEmailPassword,
+  setAuthUser:setAuthUser
 });
 
 const store = createStore(combinedReducers, applyMiddleware(thunkMiddleware))
