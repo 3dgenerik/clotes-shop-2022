@@ -20,6 +20,9 @@ import { setItemDetails } from './containers/redux/ShopItem/ShopItem.Redux';
 import { setSigninEmailPassword } from './containers/redux/Signin/Signin.reducer';
 import { setAuthUser } from './containers/redux/Auth/Auth.reducer';
 
+//TO DO
+// USE SELECTORS, RESELECOTRS AND MEMOAZING (CACHING)
+
 const combinedReducers = combineReducers({
   setMenuItems: setMenuItems,
   setCollection: setCollection,

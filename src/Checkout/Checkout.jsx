@@ -2,15 +2,18 @@ import React from "react";
 import { connect } from "react-redux";
 import { chart } from "../containers/redux/Chart/Chart.action";
 import CheckoutItem from "./CheckoutItem";
+import StripeCheckoutButton from "../components/Stripe/Stripe-button";
 
 const mapStateToProps = state => {
     return{
         items: state.setChart.items,
         count: state.setChart.count,
-        sum: state.setChart.sum
+        sum: state.setChart.sum,
+        user:state.setAuthUser.user
 
     }
 }
+
 
 const mapDispatchToProps = dispatch => {
     return{
@@ -19,7 +22,7 @@ const mapDispatchToProps = dispatch => {
 }
 
 const Checkout = (props) => {
-    const {items, count, sum, onChartValue, dropdown, size, width, column} = props;
+    const {currentUser, items, count, sum, onChartValue, dropdown, size, width, column, user} = props;
 
     const collectItems = items.map(({id, name, price, imageUrl}, idx) => {
         return (
@@ -33,8 +36,18 @@ const Checkout = (props) => {
             <div style = {{width:`${width}%`}} className = 'flex flex-column'>  
                 {count !== 0 ?
                 <>
-                    {collectItems}  
-                    <div className='tr pr2 f3'>TOTAL: <span className = 'blue fw7'>&#36;{mainSum}</span></div>
+                    {collectItems} 
+                    <div className = 'flex flex-column' >
+                        <div className='tr pr2 f3'>TOTAL: <span className = 'blue fw7'>&#36;{mainSum}</span></div>
+                        <div style = {{display:'flex', justifyContent:'flex-end', width:'100%', padding: '10px'}}>
+                            {
+                                user ?
+                                <StripeCheckoutButton price = {mainSum}/>
+                                :
+                                <div>Please, login for payment.</div>
+                            }
+                        </div>
+                    </div>
                 </>
                 :
                     <div style = {{

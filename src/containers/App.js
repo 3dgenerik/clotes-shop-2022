@@ -76,7 +76,7 @@ const App = props => {
           <Route path = 'shop/mens' element = {<Collections idx = {4}/>}/>
           <Route path = 'shop/mens/:id' element = {details}/>
 
-          <Route path = 'shop/checkout' element = {<Checkout dropdown = {false} size = {{x:200, y:200}} width = {50} column = {5}/>}/>
+          <Route path = 'shop/checkout' element = {<Checkout currentUser = {user} dropdown = {false} size = {{x:200, y:200}} width = {50} column = {5}/>}/>
 
           <Route path = 'signin' element = {<Sign/>}/>
           <Route path = '*' element = {<div>Page not found</div>}/>
